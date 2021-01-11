@@ -12,7 +12,7 @@
                  console.log(response.json());
              });
          $(document).ready(function () {
-             $ajax({ url: "https://newsapi.org/v2/top-headlines?country=us&apiKey=49a539dd227b4feebd4cd98ebfaa417e" }).then(function (data) {
+             $ajax({ url: "https://newsapi.org/v2/top-headlines?country=us&apiKey=51deb21739684bc59312899b116746ef" }).then(function (data) {
                  alert(JSON.stringify(data));
                  alert(data.source);
                  for (i = 0; i < data.articles.length; i++) {
