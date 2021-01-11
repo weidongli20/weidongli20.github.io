@@ -128,13 +128,15 @@
 $(document).ready(function() {
 	/*Call on load*/
 	//Top Headlines
-	makeAjaxRequest("top-headlines","https://newsapi.org/v2/top-headlines", {"country":"us", "apiKey":"Your_API_KEY"});
+	var apiKey = "51deb21739684bc59312899b116746ef";
+	makeAjaxRequest("top-headlines","https://newsapi.org/v2/top-headlines", {"country":"us", "apiKey":apiKey});
 
 	//Sources
-	makeAjaxRequest("sources","https://newsapi.org/v2/sources", {"apiKey":"Your_API_KEY"});
+	makeAjaxRequest("sources","https://newsapi.org/v2/sources", {"apiKey":apiKey});
 
 	/*Events*/
-	var currentCode = "US";
+	var currentCode = "US"; 
+
 	$('.countries-drop').on('click', 'span',function(){
 		var code = $(this).text().split(":")[0];
 		if(code != currentCode){
@@ -143,7 +145,7 @@ $(document).ready(function() {
 			$(this).siblings().removeClass("active");
 			$('#top').html("");
 			$('#top').append("<div class='owl-carousel owl-theme col-md-12 px-0'></div");
-			makeAjaxRequest("top-headlines","https://newsapi.org/v2/top-headlines", {"country":code,"apiKey":"Your_API_KEY"});
+			makeAjaxRequest("top-headlines","https://newsapi.org/v2/top-headlines", {"country":code,"apiKey":apiKey});
 		}
 	});
 
